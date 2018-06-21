@@ -1,8 +1,7 @@
 'use strict';
 
-function Button(text, alertInfo, oko) {
-    this.text = text || 'Hello';
-    this.alertInfo = alertInfo;
+function Button(text) {
+    this.text = text || 'Hello'
 }
 
 Button.prototype = {
@@ -11,12 +10,12 @@ Button.prototype = {
         this.element = document.createElement('button');
         this.element.innerHTML = this.text;
         this.element.addEventListener('click', function () {
-            alert(self.alertInfo);
+            alert(self.text);
         });
         document.body.appendChild(this.element);
     }
 }
 
-var btn = new Button('Hello', 'Alert!');
+var btn = new Button('Hello');
 
 btn.create();
